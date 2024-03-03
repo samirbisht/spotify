@@ -1,0 +1,340 @@
+ :root{
+    --a:0;
+ }
+ 
+ body {
+     background-color: black;
+     color: white;
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+ }
+
+ .left {
+     width: 25vw;
+     padding: 10px;
+ }
+
+ .right {
+     width: 75vw;
+ }
+
+ .home ul li {
+     display: flex;
+     /* ek line me aa gya flex krne se */
+     width: 25px;
+     gap: 15px;
+     list-style: none;
+     padding-top: 14px;
+ }
+
+ .heading {
+     display: flex;
+     width: 100%;
+     gap: 15px;
+     padding-top: 14px;
+     padding: 23px 14px;
+     font-size: 13px;
+ }
+
+ .heading img {
+     width: 30px;
+ }
+
+ .library {
+     min-height: 75vh;
+     /*library wale box ki heigth set hui*/
+     position: relative;
+ }
+
+ .footer {
+     display: flex;
+     font-size: 10px;
+     color: grey;
+     gap: 13px;
+     /*legal , privacy center ko niceh lane ke lie*/
+     position: absolute;
+     bottom: 0;
+ }
+
+ .footer a {
+     color: grey;
+ }
+
+ .right {
+     margin: 16px 0;
+     position: relative;
+
+ }
+
+ .header {
+     display: flex;
+     /*login aur sign up ek line me aa gye */
+     justify-content: space-between;
+     /*login & signup ko last me le jane ke lie*/
+     background-color: rgb(34, 34, 34);
+ }
+
+ .header>* {
+     /*header ke ander direct elements*/
+     padding: 20px;
+ }
+
+ .spotifyplaylist {
+     padding: 16px;
+ }
+
+ .cardcontainer {
+     margin: 30px;
+     display: flex;
+     /*happy hits agal bagl aa gye*/
+     gap: 10px;
+     flex-wrap: wrap;
+     overflow-y: auto;
+     max-height: 60vh;
+ }
+
+ .card {
+     width: 150px;
+     padding: 10px;
+     border-radius: 5px;
+     background-color: #252525;
+     position: relative;
+     transition: all .9s;
+ }
+
+ .card>* {
+     padding-top: 5px;
+     /*gap b/w which is written inside cards*/
+ }
+
+ .card img {
+     width: 100%;
+     object-fit: contain;
+ }
+
+ .card:hover{
+    background-color: rgb(86, 84, 84);
+    cursor: pointer;
+    --a:1;
+ }
+
+ .play {
+     width: 38px;
+     height: 33px;
+     background-color: #1fdf64;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     /* isse wo green play button uske upar aa gya instead of taking extra space  */
+     top: 120px;
+     right: 16px;
+     opacity: var(--a);
+     transition: all 1s ease-out;
+ }
+
+ .buttons>* {
+     margin: 0 12px;
+ }
+
+ .signupbtn {
+     background-color: black;
+     color: white;
+     font-weight: bold;
+     border: none;
+     outline: none;
+     cursor: pointer;
+     font-size: 13px;
+     border-radius: 10px;
+ }
+
+ .signupbtn:hover {
+     font-size: 14px;
+     color: white;
+ }
+
+ .loginbtn {
+     background-color: white;
+     color: black;
+     font-weight: bold;
+     border: none;
+     outline: none;
+     cursor: pointer;
+     font-size: 12px;
+     padding: 10px;
+     width: 79px;
+     border-radius: 20px;
+ }
+
+ .loginbtn:hover {
+     font-weight: bold;
+     padding: 10px 12px;
+ }
+
+ .hamburger {
+     display: none;
+ }
+
+ .playbar {
+     position: absolute;
+     bottom: 60px;
+     /*niche se upar lane ke lie */
+     filter: invert(1);
+     background: #8a8888;
+     border-radius: 30px;
+     width: 95%;
+     /*right div me hua 100% puri jgh li mtlb*/
+     padding: 15px;
+     /*isse heigth bdi uski */
+     min-height: 40px;
+
+ }
+
+ .songbuttons {
+     /*buttons ko center me lane ke lie*/
+     display: flex;
+     justify-content: center;
+     gap: 16px;
+ }
+
+ .songlist ul {
+     padding: 0 42px;
+
+ }
+
+ .songlist {
+     height: 344px;
+     overflow: auto;
+     margin: 44px 0;
+ }
+
+ .songlist .info {
+     font-size: 13px;
+     width: 344px;
+ }
+
+ .songlist ul li {
+     list-style-type: decimal;
+     display: flex;
+     gap: 34px;
+     cursor: pointer;
+     padding: 0px 10px;
+     border: 1px solid white;
+ }
+
+ .playnow {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .seekbar {
+     height: 2px;
+     width: 96%;
+     border: 2px solid black;
+     border-radius: 10px;
+     position: absolute;
+     bottom: 0;
+     cursor: pointer;
+ }
+
+ .circle {
+     width: 18px;
+     height: 18px;
+     border-radius: 13px;
+     background-color: black;
+     color: black;
+     position: relative;
+     bottom: -45px;
+     right: -1px;
+     transition: left 0.5s;
+ }
+
+ .songbuttons img {
+     cursor: pointer;
+     /*wo thumb aur index finger wla cursor aa jata hai */
+ }
+
+.timevol{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.volume{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    cursor: pointer;
+}
+
+ /* RESPONSIVENESS */
+
+ @media (max-width: 500px) {
+
+     /*1400 px me mai mobile me aa jana chahunga */
+     .left {
+         background-color: red;
+         position: absolute;
+         left: -100%;
+         transition: all .3s;
+         z-index: 1;
+         width: 233px;
+         background-color: black;
+         padding: 0;
+     }
+
+     .songinfo {
+         width: auto;
+     }
+
+     .left .close {
+         position: absolute;
+         right: 31px;
+         top: 25px;
+         width: 29px;
+     }
+
+     .timevol{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        gap: 13px;
+     }
+
+     .playbar {
+         width: calc(100vw - 40px);
+     }
+
+     .seekbar {
+         width: calc(100vw - 70px);
+     }
+
+     .right {
+         width: 100vw;
+     }
+
+     .hamburger {
+         display: block;
+     }
+
+     .card {
+         width: 90vw;
+     }
+
+     .cardcontainer {
+         margin: 0;
+         justify-content: center;
+     }
+
+     .close {
+         display: block;
+     }
+ }
